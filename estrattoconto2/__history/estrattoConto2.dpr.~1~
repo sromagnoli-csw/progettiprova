@@ -1,0 +1,158 @@
+program estrattoConto2;
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Conto in 'Conto.pas';
+
+var
+  LInput: String;
+  LConto: integer;
+  LVersamenti: array of array [0 .. 1] of integer;
+  LNumVersam: integer;
+
+procedure Versamento();
+var
+  LNumIn: integer;
+  appo, LStrIn: String;
+begin
+  LNumIn := 0;
+  repeat
+    Writeln('Inserire importo da Versare o digita X per uscire');
+    Readln(LStrIn);
+    if LStrIn <> 'X' then
+    begin
+      try
+        TryStrToInt(LStrIn, LNumIn);
+        // LNumIn = LStrIn.AsInteger;
+        if (LNumIn > 0) then
+        begin
+          LNumVersam := LNumVersam + 1;
+          SetLength(LVersamenti, LNumVersam);
+          LConto := LConto + LNumIn;
+          LVersamenti[High(LVersamenti), 0] := LNumIn;
+          LVersamenti[High(LVersamenti), 1] := 1;
+          Writeln('Importo versato conrrettamente');
+          Readln(appo);
+        end
+        else
+        begin
+          Writeln('Importo non corretto');
+          LNumIn := 0;
+        end;
+      except
+        on E: Exception do
+        begin
+          Writeln('Importo non corretto');
+          LNumIn := 0;
+
+        end;
+      end;
+    end
+    else
+      LNumIn := 1;
+  until LNumIn > 0;
+
+end;
+
+procedure Prelievo();
+var
+  LNumIn: integer;
+  appo, LStrIn: String;
+begin
+  LNumIn := 0;
+  repeat
+    Writeln('Inserire importo da prelevare o digita X per uscire');
+    Readln(LStrIn);
+    if LStrIn <> 'X' then
+    begin
+      try
+        TryStrToInt(LStrIn, LNumIn);
+        // LNumIn = LStrIn.AsInteger;
+        if (LNumIn > 0) then
+        begin
+          LNumVersam := LNumVersam + 1;
+          SetLength(LVersamenti, LNumVersam);
+          LConto := LConto - LNumIn;
+          LVersamenti[High(LVersamenti), 0] := LNumIn;
+          LVersamenti[High(LVersamenti), 1] := 2;
+          Writeln('Importo prelevato conrrettamente');
+          Readln(appo);
+        end
+        else
+        begin
+          Writeln('Importo non corretto');
+          LNumIn := 0;
+        end;
+      except
+        on E: Exception do
+          LNumIn := 0;
+      end;
+    end
+    else
+      LNumIn := 1;
+
+  until LNumIn > 0;
+
+end;
+
+procedure Estratto();
+var
+  appo, LStrConto: string;
+var
+  i: integer;
+begin
+
+  Writeln('Estratto conto pari a: ' + IntToStr(LConto) + '$');
+
+  i := 0;
+  while i < LNumVersam do
+  begin
+    if LVersamenti[i, 1] = 1 then
+      Writeln('Versamento:   +' + IntToStr(LVersamenti[i, 0]))
+    else
+      Writeln('Prelievo:     -' + IntToStr(LVersamenti[i, 0]));
+
+    i := i + 1;
+  end;
+  Writeln('Totale:        ' + IntToStr(LConto));
+
+  Readln(appo);
+end;
+
+begin
+  LNumVersam := 0;
+  LConto := 0;
+  try
+    repeat
+
+      Writeln('selezionare una scelta');
+      Writeln('[A] Versamento');
+      Writeln('[B] Prelievo');
+      Writeln('[C] Vis. Conto');
+      Writeln('[X] Esci');
+      Readln(LInput);
+
+      { case LInput of
+        'A': Versamento;
+        end; }
+      if LInput = 'A' then
+        Versamento()
+      else if LInput = 'B' then
+        Prelievo()
+      else if LInput = 'C' then
+        Estratto();
+      Writeln('');
+      Writeln('');
+      Writeln('');
+      Writeln('');
+    until LInput = 'X';
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+
+end.

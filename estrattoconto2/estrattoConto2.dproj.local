@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/04/02 15:35:04.000.360,C:\Users\SRomagnoli\OneDrive - centrosoftware.com\Documenti\RAD Studio\Projects\Project1.dproj=C:\Users\SRomagnoli\OneDrive - centrosoftware.com\Desktop\Nuova cartella\Project1.dproj</Transaction>
+    <Transaction>2025/04/02 17:55:03.000.828,C:\Users\SRomagnoli\OneDrive - centrosoftware.com\Desktop\Nuova cartella\Project1.dproj=C:\ProgettiProva\estrattoconto1\Project1.dproj</Transaction>
+    <Transaction>2025/04/03 09:53:28.433,C:\ProgettiProva\estrattoconto2\Project1.dproj=C:\ProgettiProva\estrattoconto1\Project1.dproj</Transaction>
+    <Transaction>2025/04/03 09:54:02.290,=C:\ProgettiProva\estrattoconto2\Unit1.pas</Transaction>
+    <Transaction>2025/04/03 10:04:48.458,C:\ProgettiProva\estrattoconto2\Conto.pas=C:\ProgettiProva\estrattoconto2\Unit1.pas</Transaction>
+    <Transaction>2025/04/03 10:09:14.946,C:\ProgettiProva\estrattoconto2\estrattoConto2.dproj=C:\ProgettiProva\estrattoconto2\Project1.dproj</Transaction>
+    <Transaction>2025/04/03 10:15:37.287,=C:\ProgettiProva\estrattoconto2\estrattoConto2.todo</Transaction>
+  </Transactions>
+</BorlandProject>

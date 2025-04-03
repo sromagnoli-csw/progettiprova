@@ -1,0 +1,63 @@
+unit Conto;
+
+interface
+
+type
+  TMyClass = class
+  private
+    LTotConto: Integer;
+  public
+    property LConto: Integer read LTotConto;
+    var LVersamenti: array of array [0 .. 1] of integer;
+    var LNumVersam: integer;
+    procedure Versamento();
+
+  end;
+
+implementation
+
+procedure Versamento();
+var
+  LNumIn: integer;
+  appo, LStrIn: String;
+begin
+  LNumIn := 0;
+  repeat
+    Writeln('Inserire importo da Versare o digita X per uscire');
+    Readln(LStrIn);
+    if LStrIn <> 'X' then
+    begin
+      try
+        TryStrToInt(LStrIn, LNumIn);
+        // LNumIn = LStrIn.AsInteger;
+        if (LNumIn > 0) then
+        begin
+          LNumVersam := LNumVersam + 1;
+          SetLength(LVersamenti, LNumVersam);
+          LConto := LConto + LNumIn;
+          LVersamenti[High(LVersamenti), 0] := LNumIn;
+          LVersamenti[High(LVersamenti), 1] := 1;
+          Writeln('Importo versato conrrettamente');
+          Readln(appo);
+        end
+        else
+        begin
+          Writeln('Importo non corretto');
+          LNumIn := 0;
+        end;
+      except
+        on E: Exception do
+        begin
+          Writeln('Importo non corretto');
+          LNumIn := 0;
+
+        end;
+      end;
+    end
+    else
+      LNumIn := 1;
+  until LNumIn > 0;
+
+end;
+
+end.
