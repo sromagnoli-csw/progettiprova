@@ -1,0 +1,17 @@
+﻿program EstrConto3;
+
+uses
+  FMX.Forms,
+  EstrContoMenu in 'EstrContoMenu.pas' {Form1},
+  EstrContoImporto in 'EstrContoImporto.pas' {Form2},
+  EstrContoImporto2 in 'EstrContoImporto2.pas' {Form3};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TForm3, Form3);
+  Application.Run;
+end.

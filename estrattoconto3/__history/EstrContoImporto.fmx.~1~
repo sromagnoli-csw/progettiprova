@@ -1,0 +1,30 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 1920
+  FormFactor.Height = 1200
+  FormFactor.Devices = [dkDesktop]
+  object Label1: TLabel
+    Font.Size = 20.000000000000000000
+    StyledSettings = [ssFamily, ssFontColor]
+    Height = 33.000000000000000000
+    Position.X = 88.000000000000000000
+    Position.Y = 88.000000000000000000
+    Text = 'Inserire un Importo'
+    Width = 337.000000000000000000
+  end
+  object Edit1: TEdit
+    Anchors = [akLeft, akTop, akRight]
+    DisableFocusEffect = False
+    Font.Size = 20.000000000000000000
+    KeyboardType = vktDefault
+    Password = False
+    Position.X = 88.000000000000000000
+    Position.Y = 131.000000000000000000
+    Width = 457.000000000000000000
+    Height = 38.000000000000000000
+  end
+end

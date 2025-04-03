@@ -1,0 +1,41 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 390
+  ClientWidth = 586
+  FormFactor.Width = 1920
+  FormFactor.Height = 1200
+  FormFactor.Devices = [dkDesktop]
+  OnCreate = FormCreate
+  object BtnPrel: TButton
+    Align = alScale
+    DisableFocusEffect = False
+    Height = 83.982322692871090000
+    Position.X = 47.879253387451170000
+    Position.Y = 46.017692565917970000
+    Text = 'Prelievo'
+    Width = 252.927139282226600000
+    OnClick = BtnPrelClick
+  end
+  object btnConto: TButton
+    Align = alScale
+    DisableFocusEffect = False
+    Height = 79.336807250976560000
+    Position.X = 53.624271392822270000
+    Position.Y = 144.913009643554700000
+    Text = 'Estratto Conto'
+    Width = 503.850738525390600000
+    OnClick = btnContoClick
+  end
+  object BtnVersa: TButton
+    Align = alScale
+    DisableFocusEffect = False
+    Height = 85.000000000000000000
+    Position.X = 308.000000000000000000
+    Position.Y = 48.000000000000000000
+    Text = 'Versamento'
+    Width = 251.000000000000000000
+    OnClick = BtnVersaClick
+  end
+end

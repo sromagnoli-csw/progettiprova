@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/04/03 11:38:20.094,=C:\Users\SRomagnoli\OneDrive - centrosoftware.com\Documenti\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/04/03 11:40:15.207,=C:\Users\SRomagnoli\OneDrive - centrosoftware.com\Documenti\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2025/04/03 11:45:15.334,C:\ProgettiProva\estrattoconto3\EstrContoImporto.pas=C:\Users\SRomagnoli\OneDrive - centrosoftware.com\Documenti\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2025/04/03 11:45:15.334,C:\ProgettiProva\estrattoconto3\EstrContoImporto.fmx=C:\Users\SRomagnoli\OneDrive - centrosoftware.com\Documenti\RAD Studio\Projects\Unit2.fmx</Transaction>
+    <Transaction>2025/04/03 11:45:28.179,C:\ProgettiProva\estrattoconto3\EstrContoMenu.pas=C:\Users\SRomagnoli\OneDrive - centrosoftware.com\Documenti\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/04/03 11:45:28.179,C:\ProgettiProva\estrattoconto3\EstrContoMenu.fmx=C:\Users\SRomagnoli\OneDrive - centrosoftware.com\Documenti\RAD Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2025/04/03 11:47:23.966,C:\ProgettiProva\estrattoconto3\EstrConto3.dproj=C:\Users\SRomagnoli\OneDrive - centrosoftware.com\Documenti\RAD Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
