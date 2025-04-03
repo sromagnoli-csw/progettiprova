@@ -13,7 +13,7 @@ type
     BtnConf: TButton;
     TxtImporto: TEdit;
     procedure BtnConfClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure FormCreate(Sender: TObject); virtual;
     procedure TxtImportoExit(Sender: TObject);
     var
   private
@@ -21,8 +21,16 @@ type
     { Private declarations }
   public
     { Public declarations }
-    procedure Inizia(tipo: string);
     var LConto:TConto;
+  end;
+
+  TFormVers = class(TForm2)
+    procedure BtnConfClick(Sender: TObject); reintroduce;
+    procedure FormCreate(Sender: TObject); reintroduce;
+  end;
+  TFormPrel = class(TForm2)
+    procedure BtnConfClick(Sender: TObject); reintroduce;
+    procedure FormCreate(Sender: TObject); reintroduce;
   end;
 
 var
@@ -30,6 +38,12 @@ var
  // LConto:TConto;
 
 implementation
+
+procedure TForm2.BtnConfClick(Sender: TObject);
+var LAppo:integer;
+begin
+  LAppo:=1;
+end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
@@ -47,47 +61,52 @@ begin
   end;
 end;
 
-procedure TForm2.Inizia(tipo: string);
-begin
-  LTipoTrans:=tipo;
-   if(LTipoTrans='P')then
-   begin
-      Label1.Text:='Importo da prelevare';
-   end else
-   if(LTipoTrans='V')then
-   begin
-      Label1.Text:='Importo da versare';
-   end;
-end;
-
-
-
 {$R *.fmx}
 
-procedure TForm2.BtnConfClick(Sender: TObject);
+
+procedure TFormVers.FormCreate(Sender: TObject);
+begin
+  Label1.Text:='Importo da versare';
+end;
+procedure TFormVers.BtnConfClick(Sender: TObject);
 var
   LNumIn: integer;
   LEsito, LStrIn: String;
 begin
-  LNumIn:= Round(StrToInt(TxtImporto.Text));
-    if(LTipoTrans='V')then
-    begin
-      LEsito:= LConto.Versamento(LNumIn);
-    end else
-    if(LTipoTrans='P')then
-    begin
-      LEsito:= LConto.Prelievo(LNumIn);
-    end;
+  LNumIn:= StrToInt(TxtImporto.Text);
+  LEsito:= LConto.Versamento(LNumIn);
+  if(LEsito='1')then
+  begin
+    ShowMessage('transazione Completata');
+    Close;
+  end
+  else
+  begin
+    ShowMessage(LEsito);
+  end;
 
-    if(LEsito='1')then
-    begin
-      ShowMessage('transazione Completata');
-      Close;
-    end
-    else
-    begin
-      ShowMessage(LEsito);
-    end;
+end;
+
+procedure TFormPrel.FormCreate(Sender: TObject);
+begin
+  Label1.Text:='Importo da prelevare';
+end;
+procedure TFormPrel.BtnConfClick(Sender: TObject);
+var
+  LNumIn: integer;
+  LEsito, LStrIn: String;
+begin
+  LNumIn:= StrToInt(TxtImporto.Text);
+  LEsito:= LConto.Prelievo(LNumIn);
+  if(LEsito='1')then
+  begin
+    ShowMessage('transazione Completata');
+    Close;
+  end
+  else
+  begin
+    ShowMessage(LEsito);
+  end;
 
 end;
 

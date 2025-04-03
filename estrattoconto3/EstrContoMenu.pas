@@ -26,7 +26,8 @@ type
 
 var
   Form1: TForm1;
-  Form2: TForm2;
+  LFormPrel: TFormPrel;
+  LFormVers: TFormVers;
   LConto:TConto;
 
 implementation
@@ -40,19 +41,17 @@ end;
 
 procedure TForm1.BtnPrelClick(Sender: TObject);
 begin
-  Application.CreateForm(TForm2, Form2);
-  Form2.Inizia('P');
-  Form2.LConto:=LConto;
-  Form2.Show;
+  Application.CreateForm(TFormPrel, LFormPrel);
+  LFormPrel.LConto:=LConto;
+  LFormPrel.Show;
   //Form1.Close;
 end;
 
 procedure TForm1.BtnVersaClick(Sender: TObject);
 begin
-  Application.CreateForm(TForm2, Form2);
-  Form2.Inizia('V');
-  Form2.LConto:=LConto;
-  Form2.Show;
+  Application.CreateForm(TFormVers, LFormVers);
+  LFormVers.LConto:=LConto;
+  LFormVers.Show;
   //Form1.Close;
 end;
 
